@@ -1,4 +1,4 @@
-module Main (main) where
+module ChallengeSet1 (main) where
 
 import Lib
 
