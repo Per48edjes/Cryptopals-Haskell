@@ -21,6 +21,11 @@ description: Please see the README on GitHub at <https://github.com/Per48edjes/c
 
 dependencies:
   - base >= 4.7 && < 5
+  - base16-bytestring
+  - base64-bytestring
+  - bytestring
+  - containers
+  - text
 
 ghc-options:
   - -Wall

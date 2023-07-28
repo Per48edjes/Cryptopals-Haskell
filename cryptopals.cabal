@@ -35,6 +35,11 @@ library
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints
   build-depends:
       base >=4.7 && <5
+    , base16-bytestring
+    , base64-bytestring
+    , bytestring
+    , containers
+    , text
   default-language: Haskell2010
 
 executable challenge-set-1
@@ -49,7 +54,12 @@ executable challenge-set-1
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -main-is ChallengeSet1
   build-depends:
       base >=4.7 && <5
+    , base16-bytestring
+    , base64-bytestring
+    , bytestring
+    , containers
     , cryptopals
+    , text
   default-language: Haskell2010
 
 executable challenge-set-2
@@ -64,7 +74,12 @@ executable challenge-set-2
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -main-is ChallengeSet2
   build-depends:
       base >=4.7 && <5
+    , base16-bytestring
+    , base64-bytestring
+    , bytestring
+    , containers
     , cryptopals
+    , text
   default-language: Haskell2010
 
 test-suite cryptopals-test
@@ -77,5 +92,10 @@ test-suite cryptopals-test
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       base >=4.7 && <5
+    , base16-bytestring
+    , base64-bytestring
+    , bytestring
+    , containers
     , cryptopals
+    , text
   default-language: Haskell2010
