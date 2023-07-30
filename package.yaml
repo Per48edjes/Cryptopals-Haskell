@@ -24,8 +24,8 @@ dependencies:
   - base16-bytestring
   - base64-bytestring
   - bytestring
+  - cereal
   - containers
-  - text
 
 ghc-options:
   - -Wall

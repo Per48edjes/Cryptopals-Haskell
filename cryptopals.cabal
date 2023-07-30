@@ -38,8 +38,8 @@ library
     , base16-bytestring
     , base64-bytestring
     , bytestring
+    , cereal
     , containers
-    , text
   default-language: Haskell2010
 
 executable challenge-set-1
@@ -57,9 +57,9 @@ executable challenge-set-1
     , base16-bytestring
     , base64-bytestring
     , bytestring
+    , cereal
     , containers
     , cryptopals
-    , text
   default-language: Haskell2010
 
 executable challenge-set-2
@@ -77,9 +77,9 @@ executable challenge-set-2
     , base16-bytestring
     , base64-bytestring
     , bytestring
+    , cereal
     , containers
     , cryptopals
-    , text
   default-language: Haskell2010
 
 test-suite cryptopals-test
@@ -95,7 +95,7 @@ test-suite cryptopals-test
     , base16-bytestring
     , base64-bytestring
     , bytestring
+    , cereal
     , containers
     , cryptopals
-    , text
   default-language: Haskell2010
