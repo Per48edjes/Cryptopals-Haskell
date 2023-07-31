@@ -25,7 +25,11 @@ dependencies:
   - base64-bytestring
   - bytestring
   - cereal
+  - cassava
   - containers
+  - hex-text
+  - text
+  - vector
 
 ghc-options:
   - -Wall
@@ -55,6 +59,7 @@ _exe-defs: &exe-defaults
     - -with-rtsopts=-N
   dependencies:
     - cryptopals
+  other-modules: []
 
 executables:
   challenge-set-1:
