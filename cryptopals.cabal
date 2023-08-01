@@ -32,6 +32,7 @@ library
       src
   default-extensions:
       ImportQualifiedPost
+      OverloadedStrings
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints
   build-depends:
       base >=4.7 && <5
@@ -52,6 +53,7 @@ executable challenge-set-1
       app
   default-extensions:
       ImportQualifiedPost
+      OverloadedStrings
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -main-is ChallengeSet1
   build-depends:
       base >=4.7 && <5
@@ -73,6 +75,7 @@ executable challenge-set-2
       app
   default-extensions:
       ImportQualifiedPost
+      OverloadedStrings
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -main-is ChallengeSet2
   build-depends:
       base >=4.7 && <5

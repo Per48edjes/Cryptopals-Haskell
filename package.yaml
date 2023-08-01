@@ -48,11 +48,13 @@ library:
   source-dirs: src
   default-extensions:
     - ImportQualifiedPost
+    - OverloadedStrings
 
 _exe-defs: &exe-defaults
   source-dirs: app
   default-extensions:
     - ImportQualifiedPost
+    - OverloadedStrings
   ghc-options:
     - -threaded
     - -rtsopts
