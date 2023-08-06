@@ -16,6 +16,7 @@ main = do
     print $ challenge3 englishCharFreqs
     c4HexStrings <- T.lines <$> TIO.readFile "data/cs1_c4.txt"
     print $ challenge4 englishCharFreqs c4HexStrings
+    print challenge5
 
 challenge1 :: B.ByteString
 challenge1 = fromJust $ hexToBase64 c1HexString
@@ -23,7 +24,7 @@ challenge1 = fromJust $ hexToBase64 c1HexString
     c1HexString = "49276d206b696c6c696e6720796f757220627261696e206c696b65206120706f69736f6e6f7573206d757368726f6f6d"
 
 challenge2 :: B.ByteString
-challenge2 = fromJust $ applyXor c2HexString1 c2HexString2
+challenge2 = fromJust $ decryptXor c2HexString1 c2HexString2
   where
     c2HexString1 = "1c0111001f010100061a024b53535009181c"
     c2HexString2 = "686974207468652062756c6c277320657965"
@@ -37,3 +38,9 @@ challenge4 :: M.Map Word8 Double -> [T.Text] -> B.ByteString
 challenge4 charFreqs hexStrings = charFreqScorer charFreqs candidatePlaintexts
   where
     candidatePlaintexts = map (applyCharFreq charFreqs) hexStrings
+
+challenge5 :: T.Text
+challenge5 = fromJust $ encryptXor c5PlainTextString c5PlainTextKey
+  where
+    c5PlainTextString = "Burning 'em, if you ain't quick and nimble I go crazy when I hear a cymbal"
+    c5PlainTextKey = "ICE"

@@ -23,11 +23,17 @@ hexToBase64 :: Text -> Maybe B.ByteString
 hexToBase64 hexString = B64.encode <$> decodeHex hexString
 
 -- Apply XOR to two hex strings, the second of which is the key to be repeated
-applyXor :: Text -> Text -> Maybe B.ByteString
-applyXor hexString hexKey = do
+decryptXor :: Text -> Text -> Maybe B.ByteString
+decryptXor hexString hexKey = do
     decodedBs <- decodeHex hexString
     decodedKey <- decodeHex hexKey
     return $ B.pack $ zipWith xor (B.unpack decodedBs) (cycle $ B.unpack decodedKey)
+
+encryptXor :: B.ByteString -> B.ByteString -> Maybe Text
+encryptXor plainTextString plainTextKey =
+    let encodedBs = encodeHex plainTextString
+        encodedKey = encodeHex plainTextKey
+     in encodeHex <$> decryptXor encodedBs encodedKey
 
 data CharFreq = CharFreq {character :: !Text, frequency :: !Double}
     deriving (Generic, Show)
@@ -61,4 +67,4 @@ applyCharFreq charFreqs hexString = charFreqScorer charFreqs candidatePlaintexts
     candidateKeys :: [Text]
     candidateKeys = map (encodeHex . B.singleton) ([0 .. 255] :: [Word8])
     candidatePlaintexts :: [B.ByteString]
-    candidatePlaintexts = mapMaybe (applyXor hexString) candidateKeys
+    candidatePlaintexts = mapMaybe (decryptXor hexString) candidateKeys
